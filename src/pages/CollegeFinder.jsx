@@ -11,7 +11,8 @@ const CollegeFinder = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`/api/colleges/search?${new URLSearchParams(formData)}`);
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/colleges/search?${new URLSearchParams(formData)}`);
+
       const data = await res.json();
       setColleges(data);
     } catch (err) {

@@ -1,3 +1,4 @@
+// CollegeFinderForm.jsx
 import React, { useState } from 'react';
 
 const indianStates = [
@@ -12,34 +13,21 @@ const indianStates = [
 ];
 
 const categories = [
-  "open", "obc", "sc", "st",
-  "vj", "nt1", "nt2", "nt3",  "ews", "tfws", "pwdopen", "defopen"
+  "open", "obc", "sc", "st", "ews", "tfws",
+  "vj", "nt1", "nt2", "nt3",  "pwdopen", "defopen"
 ];
 
+
 const branches = [
-  "Civil Engineering",
-  "Computer Engineering",
-  "Computer Science and Engineering",
-  "Information Technology",
-  "Electrical Engineering",
-  "Electronics Engineering",
-  "Electronics and Telecommunication Engineering",
-  "Mechanical Engineering",
-  "Chemical Engineering",
-  "Biomedical Engineering",
-  "Instrumentation Engineering",
-  "Production Engineering",
-  "Textile Engineering",
-  "Food Technology",
-  "Petro Chemical Engineering",
-  "Oil and Paints Technology",
-  "Paper and Pulp Technology",
-  "Industrial IoT",
-  "Artificial Intelligence and Data Science",
-  "Artificial Intelligence and Machine Learning",
-  "Robotics and Automation",
-  "Electronics and Computer Science",
-  "Electrical Engg (Electronics and Power)"
+  "Civil Engineering", "Computer Engineering", "Computer Science and Engineering",
+  "Information Technology", "Electrical Engineering", "Electronics Engineering",
+  "Electronics and Telecommunication Engineering", "Mechanical Engineering",
+  "Chemical Engineering", "Biomedical Engineering", "Instrumentation Engineering",
+  "Production Engineering", "Textile Engineering", "Food Technology",
+  "Petro Chemical Engineering", "Oil and Paints Technology", "Paper and Pulp Technology",
+  "Industrial IoT", "Artificial Intelligence and Data Science",
+  "Artificial Intelligence and Machine Learning", "Robotics and Automation",
+  "Electronics and Computer Science", "Electrical Engg (Electronics and Power)"
 ];
 
 const genders = ["Male", "Female", "Other"];
@@ -56,7 +44,6 @@ const homeUniversities = [
   "Dr. Babasaheb Ambedkar Technological University – Lonere Region",
   "Other"
 ];
-
 
 const CollegeFinderForm = ({ onSearch }) => {
   const [formData, setFormData] = useState({
@@ -100,7 +87,6 @@ const CollegeFinderForm = ({ onSearch }) => {
         </div>
       </div>
 
-      {/* New Gender Field */}
       <div className="row mb-3">
         <div className="col-md-6">
           <label className="form-label">Gender</label>
@@ -111,8 +97,6 @@ const CollegeFinderForm = ({ onSearch }) => {
             ))}
           </select>
         </div>
-        
-        {/* New Home University Field */}
         <div className="col-md-6">
           <label className="form-label">Home University</label>
           <select name="homeUniversity" className="form-select" onChange={handleChange} value={formData.homeUniversity} required>
